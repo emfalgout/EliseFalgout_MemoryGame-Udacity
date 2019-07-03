@@ -2,7 +2,7 @@
  * Create a list that holds all of your cards
  */
 
-
+let cards = document.querySelectorAll('.card');
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -24,6 +24,15 @@ function shuffle(array) {
 
     return array;
 }
+
+// Loop through each card and create its HTML
+function reset() {
+  for (let i = 0; i < cards.length; i++) {
+    shuffle(cards);
+    cards[i].classList.remove('match', 'open', 'show'); //removes match, open and show classes
+  }
+}
+reset();
 
 
 /*
