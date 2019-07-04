@@ -34,7 +34,7 @@ function reset() {
   }
 
 }
-reset();
+
 
 
 
@@ -51,13 +51,12 @@ reset();
 let card = document.querySelector('.deck');
 card.addEventListener('click', respondToCardClick);
 let openCards = document.querySelector('.open');
-let matchedCards = document.querySelectorAll('.match');
 let numMoves = 0;
 let moves = document.querySelector('.moves');
 
 
 function respondToCardClick(evt) {
-  if (evt.target.nodeName === 'LI') {
+  if (evt.target.nodeName === 'LI' && evt.target.className === 'card') {
     evt.target.classList.add('open', 'show');
 
     /*
@@ -80,6 +79,7 @@ function respondToCardClick(evt) {
      else {
        noMatch(evt.target, openCards);
      }
+     openCards = null;
    }
     moveCounter();
   }
@@ -88,18 +88,20 @@ function respondToCardClick(evt) {
 function matched(card1, card2) {
   card1.classList.toggle('match', 'open', 'show');
   card2.classList.toggle('match', 'open', 'show');
-  openCards = null;
 }
 
 function noMatch(card1, card2){
   card1.classList.remove('open', 'show');
   card2.classList.remove('open', 'show');
-  openCards = null;
 }
 
 function moveCounter(){
-
   numMoves++;
   moves.textContent = numMoves;
   console.log('Number of moves: ' + numMoves);
+}
+
+function gameFinished(){
+  let matchedCards = document.querySelectorAll('.match');
+
 }
