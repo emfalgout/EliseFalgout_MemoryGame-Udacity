@@ -31,8 +31,10 @@ function reset() {
     shuffle(cards);
     cards[i].classList.remove('match', 'open', 'show'); //removes match, open and show classes
   }
+
 }
 reset();
+
 
 
 /*
@@ -45,3 +47,57 @@ reset();
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+let card = document.querySelector('.deck');
+card.addEventListener('click', respondToCardClick);
+let openCards = document.querySelector('.open');
+let matchedCards = document.querySelectorAll('.match');
+let numMoves = 0;
+let moves = document.querySelector('.moves');
+
+function respondToCardClick(evt) {
+  if (evt.target.nodeName === 'LI') {
+    evt.target.classList.add('open', 'show');
+
+    /*
+     * Checks to see if a card is open or not.
+     * If there are no cards open, set the clicked card to openCard
+     * If there is a card open, check to see if they are the same card
+     *    If they aren't the same card:
+            1) Remove 'open' and 'show' from both cards' class lists
+     *    If they are the same card:
+     *      1) Remove 'open' and 'show' from both cards' class lists
+     *      2) Add 'match' to both cards' class lists
+     */
+    if (openCards == null){
+     openCards = evt.target;
+
+   } else {
+     if (openCards.isEqualNode(evt.target)){
+       matched(evt.target, openCards);
+     }
+     else {
+       noMatch(evt.target, openCards);
+     }
+   }
+    moveCounter();
+  }
+}
+
+function matched(card1, card2) {
+  card1.classList.toggle('match', 'open', 'show');
+  card2.classList.toggle('match', 'open', 'show');
+  openCards = null;
+}
+
+function noMatch(card1, card2){
+  card1.classList.remove('open', 'show');
+  card2.classList.remove('open', 'show');
+  openCards = null;
+}
+
+function moveCounter(){
+
+  numMoves++;
+  moves.textContent = numMoves;
+  console.log('Number of moves: ' + numMoves);
+}
