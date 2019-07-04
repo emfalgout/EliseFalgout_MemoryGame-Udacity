@@ -30,6 +30,7 @@ function reset() {
   for (let i = 0; i < cards.length; i++) {
     shuffle(cards);
     cards[i].classList.remove('match', 'open', 'show'); //removes match, open and show classes
+    document.querySelector('.moves').textContent = '0';
   }
 
 }
@@ -53,6 +54,7 @@ let openCards = document.querySelector('.open');
 let matchedCards = document.querySelectorAll('.match');
 let numMoves = 0;
 let moves = document.querySelector('.moves');
+
 
 function respondToCardClick(evt) {
   if (evt.target.nodeName === 'LI') {
