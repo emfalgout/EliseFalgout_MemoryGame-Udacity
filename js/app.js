@@ -70,6 +70,10 @@ function reorderCards(cardNum) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+
+ /*
+  * Declares all variables
+  */
 let card = document.querySelector('.deck');
 let openCards = document.querySelector('.open');
 let moves = document.querySelector('.moves');
@@ -79,7 +83,6 @@ let numMoves = 0;
 card.addEventListener('click', respondToCardClick);
 resetButton.addEventListener('click', respondToResetClick);
 let time = 0;
-let end = false;
 let stopwatch;
 let timer = document.querySelector('.timer');
 let numStars = 3;
@@ -87,7 +90,9 @@ let playAgainBttn = document.querySelector('.play-again');
 playAgainBttn.addEventListener('click', respondToPlayClick);
 reset();
 
-
+/*
+ * Respond to a card being clicked
+ */
 function respondToCardClick(evt) {
   if (evt.target.nodeName === 'LI' && evt.target.className === 'card') {
     if (numMoves === 0) {
@@ -121,6 +126,9 @@ function respondToCardClick(evt) {
   }
 }
 
+/*
+ * Cards do match, show an animation and check to see if the game is finished
+ */
 function matched(card1, card2) {
   card1.classList.toggle('match', 'open', 'show');
   card2.classList.toggle('match', 'open', 'show');
@@ -132,6 +140,9 @@ function matched(card1, card2) {
   gameFinished();
 }
 
+/*
+ * Cards do not match, show an animation and reset the cards
+ */
 function noMatch(card1, card2){
   card1.classList.add('shake');
   card2.classList.add('shake');
@@ -140,18 +151,22 @@ function noMatch(card1, card2){
   moveCounter();
 }
 
+/*
+ * Update the number of moves taken and check to see if the number of stars needs
+ * to be updated.
+ */
 function moveCounter(){
   numMoves++;
   moves.textContent = numMoves;
   starTracker(numMoves);
 }
 
+/*
+ * Check to see if the game is finished, if so get the total time and display a modal
+ */
 function gameFinished(){
   let matchedCards = document.querySelectorAll('.match');
   if (matchedCards.length == cards.length) {
-    let endingTime = performance.now();
-    console.log(endingTime);
-    end = true;
     let totalTime = getTotalTime();
     clearInterval(stopwatch);
     document.querySelector('.modal').style.display = "flex";
@@ -159,21 +174,30 @@ function gameFinished(){
   }
 }
 
+/*
+ * Respond to the reset button being clicked by stopping the timer and resetting the board
+ */
 function respondToResetClick(e){
   clearInterval(stopwatch);
   reset();
 }
 
+/*
+ * Check to see if an animation is done before removing it from the class list
+ */
 function animationEnd(animated, animateClass){
   animated.addEventListener('animationend', () => {
     if (animateClass === 'shake') {
-    animated.classList.remove(animateClass, 'open', 'show');
+    animated.classList.remove(animateClass, 'open', 'show'); // cards don't match, reset them
   } else {
     animated.classList.remove(animateClass);
   }
   });
 }
 
+/*
+ * Track the number of stars
+ */
 function starTracker(num){
   if (num == 22) {
     stars.firstElementChild.setAttribute('style', 'display: none;');
@@ -184,19 +208,27 @@ function starTracker(num){
   }
 }
 
+/*
+ * Get the total time in seconds if the time is less than a minute and
+ * get the total time in minutes and seconds if the time is over a minute
+ */
 function getTotalTime(){
   time++;
   if (time < 60){
-    timer.textContent = time + 's';
+    timer.textContent = time + 's'; // update the displayed timer
     return time + 's';
   } else if (time >= 60){
     let minTime = Math.floor(time / 60);
     let secTime = time - (minTime * 60);
-    timer.textContent = minTime + 'm ' + secTime + 's';
+    timer.textContent = minTime + 'm ' + secTime + 's'; // update the displayed timer
     return minTime + 'm ' + secTime.toFixed(0) + 's';
   }
 }
 
+/*
+ * Respond to the Play again! button being clicked by hiding the modal and
+ * resetting the board.
+ */
 function respondToPlayClick(){
   document.querySelector('.modal').style.display = "none";
   reset();
