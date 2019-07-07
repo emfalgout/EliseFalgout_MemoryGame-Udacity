@@ -7,11 +7,12 @@
 
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+Each card has a symbol on it that matches one other card on the board. The objective of the game is
+to find the matching card to each pair in the least amount of moves and time possible.
+If two cards do not match, they will shake, turn red, and flip back over. If they do match,
+they will turn turquoise and a wiggle-like animation will play. Once all the card pairs are
+uncovered, the game is finished and a congratulatory modal will be displayed with the final
+game stats and a play again button.  
 
 ## Contributing
 
