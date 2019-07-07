@@ -103,7 +103,59 @@ h1 {
     display: inline-block;
 }
 
+.score-panel .timer {
+  padding-left: 25px;
+  display: none;
+}
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+
+.modal {
+  vertical-align: center;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.inner-modal {
+  vertical-align: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.play-again {
+  background: #02ccba;
+  color: #fff;
+  font-weight: 500;
+  font-size: 25px;
+  padding: 10px;
+  margin: auto;
+  width: 75%;
+}
+
+.congrats-title {
+  margin-bottom: 5px;
+}
+.game-stats {
+  margin: 10px;
+  font-size: 18px;
+  margin: 5px 0px 0px 0px;
+}
+
+.wooo {
+  margin-bottom: 10px;
 }

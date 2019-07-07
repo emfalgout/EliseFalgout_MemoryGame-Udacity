@@ -1,0 +1,22 @@
+@keyframes shake {
+  25% {transform: translate(20px);}
+  50% {transform: translate(-20px);}
+  75% {transform: translate(20px);}
+}
+
+.deck .card.shake {
+  background-color: red;
+  font-size: 33px;
+  animation: shake 0.5s;
+}
+
+@keyframes boing {
+  25%, 50%, 75% {transform-origin: center center;}
+  25% {transform: scale(1.2, 0.8);}
+  50% {transform: scale(0.8, 1.2);}
+  75% {transform: scale(1.1, 0.9);}
+}
+
+.deck .card.boing {
+  animation: boing 0.5s ease-in-out;
+}
