@@ -145,6 +145,7 @@ h1 {
   padding: 10px;
   margin: auto;
   width: 75%;
+  cursor: pointer;
 }
 
 .congrats-title {
