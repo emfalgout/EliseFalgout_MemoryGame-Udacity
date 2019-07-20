@@ -2,17 +2,24 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+1. [Description](#description)
+2. [Instructions](#instructions)
+3. [Contributing](#contributing)
+
+## Description
+
+This project is a memory game written in JavaScript, HTML and CSS. A four-by-four board of blank cards is presented to the player. The player can click on a card to reveal a symbol.  The symbol on each card matches that of another card on the board. The objective of the game is to find the matching card to each pair in the least amount of moves and time possible. If two cards do not match, they will shake, turn red, and flip back over. If they do match, they will turn turquoise, a wiggle-like animation will play and the cards will remain face up. Once all the card pairs are uncovered, the game is finished and a congratulatory modal will be displayed with the final game stats and a play again button.
+
+### Game Play
+
+#### Start of Game
+
+#### Cards Do Not Match
+![](no-match-animation.gif)
 
 ## Instructions
 
-Each card has a symbol on it that matches one other card on the board. The objective of the game is
-to find the matching card to each pair in the least amount of moves and time possible.
-If two cards do not match, they will shake, turn red, and flip back over. If they do match,
-they will turn turquoise and a wiggle-like animation will play. Once all the card pairs are
-uncovered, the game is finished and a congratulatory modal will be displayed with the final
-game stats and a play again button.  
+
 
 ## Contributing
 
