@@ -13,9 +13,23 @@ This project is a memory game written in JavaScript, HTML and CSS. A four-by-fou
 ### Game Play
 
 #### Start of Game
+<img src="img/start-game.png" width = "350">
 
 #### Cards Do Not Match
-![](no-match-animation.gif)
+<img src="gifs/no-match-animation.gif" width = "350">
+
+#### Cards Match
+<img src="gifs/match-animation.gif" width = "350">
+
+#### Resetting the Game
+<img src="gifs/reset-game.gif" width = "350">
+
+#### Completed Game
+<img src="gifs/finished-game.gif" width = "350">
+
+#### Replaying
+<img src="gifs/play-again.gif" width = "350">
+
 
 ## Instructions
 
