@@ -5,8 +5,8 @@
 1. [Description](#1-description)
 2. [Instructions](#2-instructions)
 3. [Usage](#3-usage)
-  * [Program Organization](#i-program-organization)
-  * [Game Play](#ii-gameplay)
+    * [Program Organization](#i-program-organization)
+    * [Game Play](#ii-gameplay)
 4. [Credits](#credits)
 
 ## 1. Description
