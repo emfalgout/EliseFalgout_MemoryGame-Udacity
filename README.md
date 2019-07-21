@@ -2,18 +2,23 @@
 
 ## Table of Contents
 
-1. [Description](#description)
-2. [Instructions](#instructions)
-3. [Contributing](#contributing)
+1. [Description](#1-description)
+2. [Instructions](#2-instructions)
+3. [Usage](#3-usage)
+  * [Program Organization](#i-program-organization)
+  * [Game Play](#ii-gameplay)
+4. [Credits](#credits)
 
-## Description
+## 1. Description
 
 This project is a memory game written in JavaScript, HTML and CSS. A four-by-four board of blank cards is presented to the player. The player can click on a card to reveal a symbol.  The symbol on each card matches that of another card on the board. The objective of the game is to find the matching card to each pair in the least amount of moves and time possible. If two cards do not match, they will shake, turn red, and flip back over. If they do match, they will turn turquoise, a wiggle-like animation will play and the cards will remain face up. Once all the card pairs are uncovered, the game is finished and a congratulatory modal will be displayed with the final game stats and a play again button.
 
-## Instructions
+## 2. Instructions
 Once the game files are downloaded, you can start the game by opening `index.html` in your browser of choice.
 
-## Usage
+## 3. Usage
+
+### i. Program Organization
 The main files for this project are the following:
 
 | File name         | Description                                           |
@@ -33,7 +38,7 @@ All of the program files must be saved in their corresponding subdirectories unl
 |`js`               | JavaScript files  |
 
 
-### Game Play
+### ii. Game Play
 
 #### Start of Game
 <img src="img/start-game.png" width = "350">
@@ -54,8 +59,6 @@ All of the program files must be saved in their corresponding subdirectories unl
 <img src="gifs/play-again.gif" width = "350">
 
 
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+## Credits
+#### Starter Code
+The starter code for this project was provided by Udacity's Front End Web Developer Nanodegree Program. This code can be found on [Udacity's GitHub repository.](https://github.com/udacity/fend-project-memory-game/blob/master/README.md "Udacity's Front End Web Developer Memory Game Repository")
